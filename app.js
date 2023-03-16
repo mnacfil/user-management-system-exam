@@ -3,12 +3,12 @@ require('dotenv').config();
 const express = require('express');
 const process = require('process')
 
-const userRoute = require('./routes/user');
+const userRouter = require('./routes/user');
 
 const app = express();
 
 app.use(express.json());
-app.use('/api/v1/users', userRoute);
+app.use('/api/v1/users', userRouter);
 
 // testing route
 app.get('/', (req, res) => {

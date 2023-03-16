@@ -1,11 +1,12 @@
 {
+  "type": "module",
   "name": "backend-exam",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node ./src/app.js",
-    "dev": "nodemon ./src/app.js",
+    "start": "node ./app.js",
+    "dev": "nodemon ./app.js",
     "db:sync": "node dist/migrations/migration.js up",
     "db:sync:undo": "tsc -p . && node dist/migrations/migration.js down"
   },
@@ -20,6 +21,7 @@
     "sequelize": "^6.29.3"
   },
   "devDependencies": {
-    "nodemon": "^2.0.21"
+    "nodemon": "^2.0.21",
+    "sequelize-cli": "^6.6.0"
   }
 }
