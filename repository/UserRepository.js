@@ -34,7 +34,23 @@ class UsersRepository {
             try {
                 resolve(Users.destroy({
                     where: {
-                        id: userId
+                        id: userId,
+                    },
+                    
+                }))
+            } catch (error) {
+                console.log(`Repository Error: ${error}`);
+                reject(err);
+            }
+        })
+    }
+    // delete user by user_id
+    deleteMultipleUserbyTheirID = (usersId) => {
+        return new Promise((resolve, reject) => {
+            try {
+                resolve(Users.destroy({
+                    where: {
+                        id: usersId
                     }
                 }))
             } catch (error) {

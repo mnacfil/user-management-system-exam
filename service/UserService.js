@@ -54,6 +54,20 @@ class UsersService {
         }
     }
 
+    deleteMultipleUsersByTheirID = async(usersID) => {
+        try {
+            const deletedUsers = await usersRepository.deleteMultipleUserbyTheirID(usersID);
+            return {
+                status: "SUCCESS",
+                message: "Success delete user",
+                data: deletedUsers
+            }
+        } catch (error) {
+            console.log(error);
+            throw new Error(error);
+        }
+    }
+
     
     updateUserById = async(id, reqObject) => {
         try {

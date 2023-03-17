@@ -3,7 +3,7 @@ const router = express.Router();
 
 const userController = require('../controllers/userController');
 
-router.delete('/remove-all-user', userController.removeAllUser);
+router.delete('/delete-multiple-user', userController.deleteMultipleUsersByTheirID);
 router.route('/').
                 post(userController.createUser).
                 get(userController.getAllUser);

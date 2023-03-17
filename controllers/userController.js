@@ -30,6 +30,16 @@ class UserController {
         }
     }
 
+    // delete multiple user
+    deleteMultipleUsersByTheirID =async  (req, res) => {
+        try {
+            const usersDeletingResult = await usersService.deleteMultipleUsersByTheirID(req.body.usersID);
+            res.status(200).json({usersDeletingResult});
+        } catch (error) {
+            res.status(500).json({message: 'Something went wrong, Please try again later.'})
+        }
+    }
+
     // edit user
     updateUser =async  (req, res) => {
         try {
