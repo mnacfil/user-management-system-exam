@@ -11,6 +11,7 @@ const pool = new Sequelize(process.env.DB_DATABASE, process.env.DB_USER, process
         acquire: 60000,
         idle: 10000
     },
+    timezone: '+08:00'
 });
 
 module.exports = {
