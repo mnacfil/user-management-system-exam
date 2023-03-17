@@ -5,43 +5,43 @@ const Model = db.Sequelize.Model;
 class Users extends Model {}
 
 const UserModel = Users.init({
-  user_id: {
+  id: {
     allowNull: false,
     autoIncrement: true,
     primaryKey: true,
-    type: Sequelize.INTEGER
+    type: db.Sequelize.INTEGER
   },
   firstName: {
-    type: Sequelize.STRING
+    type: db.Sequelize.STRING
   },
   lastName: {
-    type: Sequelize.STRING
+    type: db.Sequelize.STRING
   },
   email: {
-    type: Sequelize.STRING
+    type: db.Sequelize.STRING
   },
   password: {
-    type: Sequelize.STRING
+    type: db.Sequelize.STRING
   },
   mobilePhone: {
-    type: Sequelize.STRING
+    type: db.Sequelize.STRING
   },
   address: {
-    type: Sequelize.STRING
+    type: db.Sequelize.STRING
   },
   postalCode: {
-    type: Sequelize.STRING
+    type: db.Sequelize.STRING
   },
   username: {
-    type: Sequelize.STRING
+    type: db.Sequelize.STRING
   },
   createdAt: {
     allowNull: false,
-    type: Sequelize.DATE
+    type: db.Sequelize.DATE
   },
   updatedAt: {
     allowNull: false,
-    type: Sequelize.DATE
+    type: db.Sequelize.DATE
   },
   
 },{

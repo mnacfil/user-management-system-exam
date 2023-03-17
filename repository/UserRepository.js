@@ -19,7 +19,7 @@ class UsersRepository {
             try {
                 resolve(Users.update(data, {
                     where: {
-                        user_id: userId
+                        id: userId
                     }
                 }))
             } catch (error) {
@@ -34,7 +34,7 @@ class UsersRepository {
             try {
                 resolve(Users.destroy({
                     where: {
-                        user_id: userId
+                        id: userId
                     }
                 }))
             } catch (error) {
@@ -56,4 +56,4 @@ class UsersRepository {
     }
 }
 
-export default new UsersRepository();
+module.exports = new UsersRepository();

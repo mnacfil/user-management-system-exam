@@ -1,30 +1,54 @@
-import usersService from '../service/UserService';
+const usersService = require('../service/UserService');
 
 class UserController {
     createUser = async (req, res) => {
         try {
             const userCreationResult = await usersService.createUser(req.body);
-            res.status(201).json({userCreationResult})
+            res.status(201).json({userCreationResult});
         } catch (error) {
             res.status(500).json({message: 'Something went wrong, Please try again later.'})
         }
     }
+
+    // get all user
+    getAllUser = async (req, res) => {
+        try {
+            const gettingAllUserResult = await usersService.getAllUser();
+            res.status(200).json({gettingAllUserResult});
+        } catch (error) {
+            res.status(500).json({message: 'Something went wrong, Please try again later.'})
+        }
+    }
+
+    // delete user
+    deleteUser =async  (req, res) => {
+        try {
+            const userDeletingResult = await usersService.deleteUserById(req.params.id);
+            res.status(200).json({userDeletingResult});
+        } catch (error) {
+            res.status(500).json({message: 'Something went wrong, Please try again later.'})
+        }
+    }
+
     // edit user
-// const editUser = (req, res) => {
-//     res.json({msg: "edit user"});
-// }
-// // delete user
-// const deleteUser = (req, res) => {
-//     res.json({msg: "delete user"});
-// }
-// // get all user
-// const getAllUser = (req, res) => {
-//     res.json({msg: "get all user"});
-// }
-// // remove multiple user
-// const removeAllUser = (req, res) => {
-//     res.json({msg: "remove all  user"});
-// }
+    updateUser =async  (req, res) => {
+        try {
+            const userUpdatedResult = await usersService.updateUserById(req.params.id, req.body);
+            res.status(200).json({userUpdatedResult});
+        } catch (error) {
+            res.status(500).json({message: 'Something went wrong, Please try again later.'})
+        }
+    }
+
+    // remove multiple user user
+    removeAllUser =async  (req, res) => {
+        // try {
+        //     const userDeletingResult = await usersService.(req.params.id);
+        //     res.status(200).json({userDeletingResult});
+        // } catch (error) {
+        //     res.status(500).json({message: 'Something went wrong, Please try again later.'})
+        // }
+    }
 }
 
-export default new UserController();
+module.exports = new UserController();
